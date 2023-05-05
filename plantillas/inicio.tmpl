@@ -1,0 +1,42 @@
+{{ define "inicio" }}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>CRUD GOLANG</title>
+  </head>
+  <body>
+    <h1>CRUD GOLANG</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{range.}}
+         <tr>
+                <td>{{.Id}}</td>
+                <td>{{.Nombre}}</td>
+                <td>{{.Correo}}</td>
+                <td>
+                <a name="" id="" class="btn btn-warning" href="/editar?id={{.Id}}" role="button">Editar</a>
+                |
+                <a name="" id="" class="btn btn-danger" href="/borrar?id={{.Id}}" role="button">Borrar</a>
+                </td>
+            </tr>
+        {{end}}    
+        </tbody>    
+    </table>
+    <a name ="" id="" class="btn btn-primary" href="/crear" role="button">Agregar Empleado</button>
+
+  </body>
+</html>
+{{ end }}

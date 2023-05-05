@@ -1,0 +1,28 @@
+{{ define "editar" }}
+
+<div class="card">
+    <div class=card-header>
+    Empleados
+    </div>
+  <form method="post" action="/actualizar">
+    <div class="form-group">
+        <label class="sr-only" for="inputName">Clave de Empleado</label>
+        <input type="hidden" value={{.Id}} class="form-control" name="id"
+        id="id">
+    </div>
+    <div class = "card-body">
+  
+  <p>Nombre: <input type="text" name="nombre"
+  value="{{.Nombre}}" id="nombre" size="40"></p>
+  <p>Correo: <input type="text" name="correo" 
+  value="{{.Correo}}" id="correo" size="40"></p>
+  <p>
+  <button type="submit">Modificar</button>
+  </p>
+</form>
+    </div>
+</div>
+
+
+
+{{end}}
